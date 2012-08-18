@@ -1,0 +1,231 @@
+/* Scuk helpery
+   -----------------------------------------------------------------
+*/
+
+/* Tridy pro zmenu velikosti pisma */
+
+.font-small {
+  .fontSizeSmall();
+  color: @textColor;
+}
+
+.font-size-medium {
+	.fontSizeMedium();	
+}
+
+/* Blok, ktery omezuje sirku obsahu a vyteckovava 
+   (Napr. u nadpisu v seznamech)
+*/
+.limiter {
+	display: block;
+	.text-overflow();
+	margin-right: 100px;
+}
+
+/* Prvky dulezite pro pristupnost, ale neviditelne na obrazovkach */
+.dumb-only {
+  display: none;
+}
+
+/* Centrovani pisma */
+.center {
+  text-align: center;
+}
+
+/* Centrovani boxu nezname sirky doprostred rodicovskeho boxu 
+  (napr. ikony napravo od nazvu podniku) 
+*/
+
+.centerbox-outer {
+  text-align: center;
+}
+
+.centerbox-inner {
+  display: inline-block;
+  margin: 0 auto;  
+}
+
+/* Zvyrazneny boxik Bootstrapu pocitame tak, aby nevycnival z mrizky */
+
+.well {
+  .box-sizing(border-box);
+}
+
+/* Mazaci div se nam obcas hodi */
+
+.clear-zero {
+	clear: both;
+	font-size: 1px;
+}
+
+/* Varianta kontejneru prilepena uplne nahoru
+  (napr. v detailu specialu kde neni horni banner)
+*/
+.container.on-top {
+	margin-top: -40px;
+	@media (max-width: 980px) {
+		margin-top: -20px;
+	}
+}
+
+
+/* Centralni typo */
+
+/* Nadpis druhe urovne (obvykle h2) */
+.head-2 {
+	.fontSizeBig();	
+}
+
+/* Nadpis treti urovne (obvykle h3) */
+.head-3 {
+	.fontSizeMedium();
+	
+	// Smartphony - centrovani atd.
+	@media (max-width: 480px) {
+		text-align: center;
+	}	
+}
+
+/* --- "Radek" v layoutu Bootstrapu ---
+	 V prototypu pouzivame i na jednotne vertikalni odsazovani bloku
+*/
+
+.row {
+  margin-bottom: 2.5*@baseFontSize;
+
+	// Tablety na vysku
+	@media (min-width: 768px) and (max-width: 979px) {
+	  margin-bottom: 2*@baseFontSize;
+	}
+
+	// Smartphony, male tablety
+	@media (max-width: 767px) {
+	  margin-bottom: @baseFontSize;
+	}
+}
+
+
+
+/* --- Prestylovani jQuery UI naseptavace ---
+   prepsani stylu jQuery UI
+  (pouzivame ve vyhledavacich polickach)
+*/
+
+.ui-autocomplete {
+
+	&.ui-widget {
+		z-index: 900 !important;
+		font: ~"@{baseFontSize}px/@{baseLineHeight}px" @baseFontFamily;
+		border: 0;
+	  padding: 0;	 
+		background: @grayLighter;
+		color: @gray;		
+		.box-shadow(5px 5px 20px rgba(0,0,0,.25))
+	}
+	
+	&.ui-menu {
+	}
+	
+	.ui-autocomplete-category {
+		background: @gray;
+		color: @grayLighter;
+		padding: 10px;		
+	}
+	
+	.ui-corner-all {
+		.border-radius(0);
+	}
+	
+	&.ui-menu .ui-menu-item a {
+		background: @grayLighter;
+		color: @gray;
+		padding: 10px;		
+
+		&.ui-state-hover {
+			margin: 0;
+			border: 0;
+			background: @grayLight;			
+			cursor: pointer;
+		}
+
+	}
+	
+}
+
+/* --- Barevne rozlisovani podniku --- */
+
+.cat-vse            { color: #232017; }
+.cat-cukrarny       { color: #FF0062; }
+.cat-farmy          { color: #918f00; }
+.cat-kavarny        { color: #7b351c; }
+.cat-lahudky        { color: #d97809; }
+.cat-maso           { color: #c8000f; }
+.cat-ryby           { color: #009faf; }
+.cat-ovozel 				{ color: #00954d; }
+.cat-pekarny        { color: #b66100; }
+.cat-restaurace     { color: #ff3300; }
+.cat-napoje 				{ color: #1660a3; }
+.cat-temata         { color: #232017; }
+
+
+/* --- "Hustejsi" grid --- 
+   Mensi vertikalni mezery mezi prvky.
+	 Pouzivame pro seznamy polozek aby se lepe skenovaly po radcich.
+*/
+
+.thicker-grid {
+	
+	// Siroky desktop
+	@media (min-width: 1200px) {
+	  #grid > .core(87px, 10px);	// TODO proc 88 jde a 90 ne? (celkem by melo byt 100)
+	}	
+	
+	// Normalni desktop a tablety na sirku
+	@media (min-width: 980px) and (max-width: 1199px) {
+	  #grid > .core(69px, 10px);	// TODO … (celkem by melo byt 80)
+	}	
+	
+	// Tablety na vysku
+	@media (min-width: 768px) and (max-width: 979px) {
+	  #grid > .core(50px, 10px); // TODO … (celkem by melo byt 62)
+	}
+	
+	[class*="span"] & .row {
+		margin-right: -5px; // TODO fix pro recenze u /lide/cuketka/ @ 1024
+	}
+	
+	.span4 & .row {
+		margin-right: -10px; // TODO fix pro odkazy pod fotkou u /lide/cuketka/ @ 1024
+	}	
+	
+}
+
+/* --- Mrizka pro seznamy profilu --- 
+	 Na mobilech se nerozpadne do jednosloupcoveho layoutu, ale nastavime fluidni sirku sloupce.
+	 Napr. v seznamech profilu.
+*/
+.profiles-grid {
+	
+	// Smartphony na sirku az tablety na vysku
+	// 4 sloupcovy layout	
+	@media (min-width: 481px) and (max-width: 767px) {
+		.row > [class*="span"], 
+		.row-fluid > [class*="span"] {
+			float: left;
+			width: 25%;
+			margin: 0;
+		}
+	}
+	
+	// Smartphony
+	// 2 sloupcovy layout
+	@media (max-width: 480px) {
+		.row > [class*="span"], 
+		.row-fluid > [class*="span"] {
+			float: left;
+			width: 50%;
+			margin: 0;
+		}
+	}	
+	
+}

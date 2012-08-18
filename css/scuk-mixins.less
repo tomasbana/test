@@ -1,0 +1,71 @@
+/* Mixiny pouzivane na jinych mistech Scuk CSSka
+   -----------------------------------------------------------------
+*/
+
+
+// --- Lepsi vykreslovani obrazku ---
+// pouzivame na mistech kde zmensovani obrazku nechavame na prohlizeci
+
+.better-image-rendering() {
+	image-rendering: optimizeSpeed;             /* Legal fallback */
+	image-rendering: -moz-crisp-edges;          /* Firefox */
+	image-rendering: -o-crisp-edges;            /* Opera */
+	image-rendering: -webkit-optimize-contrast; /* Chrome */
+	image-rendering: optimize-contrast;         /* CSS3 Proposed */
+	-ms-interpolation-mode: nearest-neighbor;   /* IE8+ */	
+}
+
+
+// --- Velikosti pisma ---
+
+.fontSizeSmall() {
+	font-size: 12px;
+}
+
+.fontSizeNormal() {
+	font-size: 15px;
+}
+
+.fontSizeMedium() {
+	font-size: 18px;
+	line-height: 24px;
+	
+	// Smartphony, male tablety
+	@media (max-width: 767px) {
+		font-size: @baseFontSize;
+		line-height: @baseLineHeight;
+	}		
+}
+
+// Stredni velikost pisma pro nadpisy treti urovne, ktere 
+// nemeni velikost napric rozlisenimi - nadpisy v polozkach 
+// seznamu
+.fontSizeMediumForBoxes() {
+	font-size: 	18px;
+	line-height: 40px;	
+}
+
+// Velikost pro nadpisy druhe urovne
+.fontSizeBig() {
+	// Vychozi - normalni desktop - 100 %
+	font-size: 28px;
+	line-height: 110%;	
+	margin-bottom: .5*@baseFontSize;	
+
+	// Tablety na vysku
+	@media (min-width: 768px) and (max-width: 979px) {
+		font-size: 28px;	
+	}
+
+	// Smartphony, male tablety
+	@media (min-width: 480px) and (max-width: 767px) {
+		font-size: 20px;	
+		text-align: center;
+	}
+
+	// Smartphony na vysku
+	@media (max-width: 479px) {
+		font-size: 20px;	
+		text-align: center;
+	}
+}

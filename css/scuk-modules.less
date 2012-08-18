@@ -1,0 +1,1621 @@
+/* Nase moduly
+   -----------------------------------------------------------------
+*/
+
+/* --- Hlavicka stranky --- */
+
+.scuk-page-head {
+
+	// Hlavni nadpis stranky
+	.head-1 {
+		// Vychozi - normalni desktop - 100 %
+		font-size: 54px;
+		line-height: 110%;
+		margin-bottom: .5*@baseFontSize;
+
+		// Tablety na vysku
+		@media (min-width: 768px) and (max-width: 979px) {
+			font-size: 72px;
+		}
+
+		// Smartphony na vysku
+		@media (max-width: 479px) {
+			font-size: 45px;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+	}
+
+	// Perex stranky
+	.perex {
+		font-size: 20px;
+		line-height: 27px;
+		margin-bottom: 0;
+		font-weight: 300;
+
+		// Smartphony na vysku
+		@media (max-width: 479px) {
+			font-size: 18px;
+			line-height: 24px;
+			text-align: center;
+		}
+	}
+
+}
+
+
+/* --- Paticka webu --- */
+
+.scuk-foot {
+  padding: @baseFontSize 0;
+  background-color: #000;
+  color: #fff;
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+	}
+
+}
+
+/* Socialni site v paticce  */
+
+.scuk-socials > .item {
+  font-size: smaller;
+  display: inline-block;
+  text-align: center;
+  background-color: #333;
+  width: 40px; /* 50 */
+  height: 30px; /* 50 */
+  padding: 15px 5px 5px;
+	.text-overflow();
+	.border-radius(50%);
+}
+
+.scuk-socials > .item:last-child {
+  margin-right: 0;
+}
+
+/* Scuk newsletter */
+
+.scuk-foot .scuk-newsletter input,
+.scuk-foot .scuk-newsletter button {
+  background-color: transparent;
+  border-color: #333;
+}
+
+.scuk-foot .scuk-newsletter button {
+  background: #333;
+  color: #fff;
+  text-shadow: none;
+  -webkit-box-shadow: none; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: none; /* FF3.5 - 3.6 */
+  box-shadow: none; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+.scuk-related {
+  background-color: #f8f8f8;
+  padding: 20px 0 40px;
+}
+
+
+/* --- Login v navigaci --- */
+
+.scuk-navbar-login  {
+  margin: 0;
+  padding: 0;
+}
+
+.scuk-navbar-login span {
+  display: inline-block;
+  line-height: 19px;
+  color: #fff;
+  padding: 10px 10px 11px;
+}
+
+
+/* --- Inline nadpis ---
+  (napr. v detailu stitku)
+*/
+
+.scuk-head-inline {
+	display: inline-block;
+}
+
+
+/* --- Modul odkaz, ktery se netvari jako odkaz ;) ---
+   (na delsim textu -- napr. anotace v seznamu recenzi)
+*/
+
+.scuk-anchor-hidden {
+	color: @textColor !important;
+	text-decoration: none !important;
+
+	&:hover > *,
+	&:focus > *,
+	&:active > * {
+	  .opacity(75);
+	}
+}
+
+
+/* --- Inline formularovy prvek ---
+  (rolovatko u nadpisu - treba v detailu stitku)
+*/
+
+.scuk-form-inline {
+	display: inline-block;
+}
+
+
+/* --- Filtr blok: elementy pro filtrovni obsahu na strance ---
+	Elementy uvnitr (deklarace nasleduji):
+	.scuk-filter-select -- filtr s vyberem jedne moznosti (<select> menu)
+	.scuk-filter-search -- vyhledavani uvnitr zobrazeneho obsahu
+	.scuk-filter-switcher -- prepinani mezi skupinami zobrazovanych prvku
+*/
+
+.scuk-filter-bar { }
+
+
+/* --- Filtr s vyberem jedne moznosti (<select> menu) ---
+	 (napr. vyber typu a oblasti pro seznamy ve Filtru obsahu)
+*/
+
+.scuk-filter-select {
+	text-align: right;
+
+	form {
+		display: inline-block;
+		margin-bottom: @baseLineHeight/2;
+	}
+
+	form.type-select,
+	form.region-select label {
+		margin-right: 10px;
+	}
+
+	/* Nezobrazujeme elementy, ktere tady jsou kvuli pristupnosti */
+	.js & input[type='submit'],
+	.js & .type-select label {
+		display: none;
+	}
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+
+} // .scuk-filter-select
+
+
+
+/* --- Vyhledavani v obsahu stranky ve filtr bloku --- */
+
+.scuk-filter-search {
+	margin-bottom: @baseLineHeight;
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		text-align: center;
+		float: none;
+	}
+
+	.pull-right & {
+		float: right;
+
+		// Smartphony az tablet na vysku - centrovani atd.
+		@media (max-width: 767px) {
+			float: none;
+		}
+	}
+
+} // .scuk-filter-search
+
+
+/* --- Filtr pro prepinani typu zobrazenych dat ve filtr bloku --- */
+
+.scuk-filter-switcher {
+	margin-bottom: @baseFontSize;
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+
+	.btn {
+		float: none;
+		margin-left: -4px;
+	}
+
+}
+
+
+/* --- Razeni seznamu ve filtr bloku --- */
+
+.scuk-ordering {
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+
+	.active {
+	   color: #333; // TODO
+	}
+
+}
+
+
+
+/* --- Hodnoceni --- */
+
+.scuk-reviews .scuk-review {
+  margin-bottom: @baseFontSize;
+}
+
+.scuk-review-scukar {
+  display: inline-block;
+  float: left;
+  margin-bottom: .5*@baseFontSize;
+}
+
+.scuk-review-points {
+  display: inline-block;
+  float: left;
+}
+
+.scuk-review-text {
+  clear: left;
+}
+
+.scuk-reviews-more {
+  clear: both;
+}
+
+
+/* --- Seznamy podobnych - docasna verze z prvniho prototypu --- */
+
+.scuk-related-list,
+.scuk-related-list li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.scuk-related-list .item {
+  display: block;
+  background-color: #eee;
+  padding: 9px;
+  height: 45px;
+  margin-bottom: .5*@baseLineHeight;
+}
+
+.scuk-related-list .item h3,
+.scuk-related-list .item .text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Specialy */
+
+.scuk-related-specials .item img {
+  float: left;
+  clear: left;
+}
+
+.scuk-related-specials .content {
+  margin-left: 55px;
+  display: block;
+}
+
+/* Clanky */
+
+.scuk-related-articles .item img {
+  float: right;
+  clear: right;
+}
+
+.scuk-related-articles .content {
+  margin-right: 55px;
+  display: block;
+}
+
+
+
+/* --- Avatar ---
+	 (napr. v seznamu Scukaru nebo v detailu Scukare)
+	Varianty:
+	- .big -- zobrazuje se v detailu Scukare
+*/
+
+.scuk-avatar {
+
+	a {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	// Varianta pro detail Scukare
+	 &.big {
+		text-align: center;
+		margin-top: -20px;
+		margin-bottom: 20px;
+
+		// Smartphony na sirku az tablety na vysku
+		@media (max-width: 767px) {
+			margin-top: 0;
+		}
+
+		img {
+			max-width: 120px;
+
+			// Smartphony
+			@media (max-width: 480px) {
+				max-width: 80px;
+			}
+
+		}
+
+	}
+
+} // .scuk-avatar
+
+
+
+/* --- Box s cisly --- 
+	 (napr. na strance scukare)
+*/
+
+.scuk-nr-box {
+	width: 15%; /* 6 ks */
+	min-width: 85px;
+	float: left;
+	padding: 10px 0;
+	margin: 0 1.67% 8px 0;
+	border: @grayLight solid 1px;
+	background: @grayLighter;
+	text-align: center;
+	.border-radius(15px);
+}
+
+.scuk-nr-box p {
+	margin: 0;
+}
+
+div > .scuk-nr-box:last-child {
+	margin-right: 0
+}
+
+.scuk-nr-box h2 {
+  font-size: 35px;
+  margin-bottom: 0.25*@baseLineHeight;
+}
+
+
+
+/* --- Boxik s recenzi ---
+	 Varianty:
+	.with-avatar - s avatarem autora pro seznam recenzi u podniku
+*/
+
+.scuk-review-box {
+	.box-sizing(border-box);
+	height: 275px;
+	padding: 10px 15px 0;
+	margin-bottom: 0.5*@baseLineHeight;
+	overflow: hidden;
+	position: relative;
+	background: @grayLighter;
+
+	h3 {
+		margin-bottom: 0;
+	}
+
+	// Odkaz zabira celou plochu nadpisu
+	h3 a {
+		display: block;
+		padding: 2px 15px 0;
+		margin: -10px -15px;
+		.text-overflow();
+		.fontSizeMediumForBoxes();
+	}
+
+	// Avatar Scukare
+	.scuk-avatar {
+		width: 30px;
+		height: 30px;
+	}
+
+	// Vnitrni blok nadpisu co vytvari spodni teckovany ramecek
+	.scuk-review-head-in {
+		display: block;
+		line-height: 40px;
+		height: 40px;
+		padding-bottom: 5px;
+		border-bottom: 3px dotted @white;
+	}
+
+	// Vnitrni blok nadpisu co zkracuje text
+	.scuk-review-head-limiter {
+		display: block;
+		margin-right: 40px;
+		.text-overflow();
+	}
+
+	// Ciselne hodnoceni (kytka)
+	.scuk-score {
+		position: absolute;
+		top: 9px;
+		right: 10px;
+	}
+
+	// Cas/autor recenze
+	.scuk-review-when-who {
+		text-align: right;
+		.fontSizeSmall();
+		position: absolute;
+		top: 63px;
+		right: 15px;
+		display: inline-block;
+		margin-bottom: 0;
+	}
+
+	// Resume recenze
+	.scuk-review-box-resume {
+		border-top: 3px dotted @white;
+		padding: 15px 0 5px;
+		margin-top: 50px;
+		overflow: hidden;
+	}
+
+	// - Mixiny -
+
+	// Varianta vypisu na dva radky
+	.scuk-review-box-two-rows {
+		.scuk-review-head-limiter {
+			margin-right: 190px;
+		}
+		.scuk-review-when-who {
+			top: 14px;
+			right: 47px;
+		}
+		.scuk-review-box-resume {
+			margin-top: 5px;
+			border-top: 0;
+			height: auto;
+		}
+	}
+
+	// - Responsive -
+
+	// Siroky desktop
+	@media (min-width: 1200px) {
+		height: 195px;
+		.scuk-review-box-two-rows();
+	}
+
+	// Tablety na vysku
+	@media (min-width: 768px) and (max-width: 979px) {
+		height: 335px;
+	}
+
+	// Smartphony az tablety na vysky (dvouradkova varianta)
+	@media (min-width: 481px) and (max-width: 767px) {
+		height: auto;
+		.scuk-review-box-two-rows();
+	}
+
+	// Smartphony (dvouradkova varianta)
+	@media (max-width: 480px) {
+		height: auto;
+	}
+
+
+} // .scuk-review-box
+
+
+
+/* --- Box s recenzi - varianta s avatarem autora pro seznam recenzi u podniku --- */
+
+.scuk-review-box.with-avatar {
+
+	.scuk-avatar {
+		position: absolute;
+		top: 8px;
+		left: 15px;
+	}
+
+	.scuk-review-head-limiter {
+		margin-left: 40px;
+	}
+
+	// Siroky desktop
+	@media (min-width: 1200px) {
+		.scuk-review-head-limiter {
+			margin-right: 130px;
+		}
+	}
+
+} // .scuk-review-box.with-avatar
+
+
+
+/* --- Hodnoceni podniku (kytka) --- */
+
+.scuk-score {
+	a {
+		display: block;
+	}
+}
+
+.scuk-score-icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background: @white;
+	.border-radius(50%);
+	background-image: url('../img/kytka_3.png') no-repeat center center;
+	.background-size(contain);
+	text-indent: -200px;
+	overflow: hidden;
+
+	&.score-1 {  background-image: url('../img/kytka_1.png');  }
+	&.score-2 {  background-image: url('../img/kytka_2.png');  }
+	&.score-3 {  background-image: url('../img/kytka_3.png');  }
+	&.score-4 {  background-image: url('../img/kytka_4.png');  }
+	&.score-5 {  background-image: url('../img/kytka_5.png');  }
+
+	&:hover,
+	&:focus,
+	&:active {
+	  .opacity(75);
+	}
+}
+
+
+
+
+/* --- Boxik s navstevou podniku --- */
+
+.scuk-visit-box {
+	.box-sizing(border-box);
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	background: @grayLighter;
+	margin-bottom: .5*@baseLineHeight;
+
+	hr {
+		display: none;
+	}
+
+	// Nazev podniku/Jmeno scukare
+	h3 {
+		margin-bottom: 0;
+
+		a {
+			display: block;
+			.fontSizeMediumForBoxes();
+			height: 40px;
+			padding: 0 15px;
+			.text-overflow();
+		}
+
+		.limiter {
+			display: block;
+			margin-right: 200px;
+		}
+
+	}
+
+	// Kdy, kdo a hodnoceni
+	.scuk-visit-box-info {
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		margin: 0 10px 10px 0;
+	}
+
+	// Kdy
+	.scuk-visit-box-info .timeago {
+		.fontSizeSmall();
+	}
+
+	// Hodnoceni
+	.scuk-visit-rate {
+	}
+
+	// Od tabletu na vysku se boxik s navstevou
+	// rozdeluje do dvou radek
+	@media (max-width: 979px) {
+		height: 80px;
+
+		h3 {
+			a {
+				margin-top: -43px;
+				padding-bottom: 40px;
+			}
+
+			.limiter {
+			  margin-right: 0;
+			}
+		}
+
+		hr {
+			display: block;
+			margin: 40px 15px 0 15px;
+			padding: 0;
+			border: 0;
+			border-top: 3px dotted @white;
+		}
+
+		.scuk-visit-box-info {
+			position: static;
+			display: block;
+			margin: 0 15px;
+			padding: 7px 0;
+			.clearfix();
+
+			.scuk-visit-box-time {
+				float: right;
+				margin-top: -38px;
+				margin-right: 35px;
+			}
+
+			.scuk-visit-rate {
+				float: right;
+				margin-top: -40px;
+			}
+
+		}
+
+
+	}
+
+
+
+}
+
+
+/* --- Boxik s malou navstevou podniku ---
+   napr. v navstevach podniku: /lide/cuketka/navstevy/lokal/
+*/
+
+.scuk-small-visit-box {
+	padding: 10px 15px;
+	height: 20px;
+	background: @grayLighter;
+	margin-bottom: .5*@baseLineHeight;
+
+	.scuk-visit-rate {
+		float: right;
+		margin-top: -3px;
+	}
+
+}
+
+
+
+/* --- Boxik s oblibenym podnikem ---
+	 Napr. v detailu Scukare
+*/
+
+.scuk-fav-shop-box {
+	padding: 10px 15px;
+	height: 20px;
+	background: @grayLighter;
+	margin-bottom: .5*@baseLineHeight;
+
+	h3 {
+		margin-top: -10px;
+		margin-bottom: 0;
+		float: left;
+		.fontSizeMediumForBoxes();
+		display: inline-block;
+		width: 60%;
+		.text-overflow();
+	}
+
+	.scuk-fav-shop-box-right {
+		float: right;
+		display: inline-block;
+		margin: 0;
+	}
+
+	.timeago {
+		.fontSizeSmall();
+	}
+
+} // .scuk-fav-shop-box
+
+
+
+/* --- Scuk like - mnamovani srdickem --- */
+
+.scuk-like {
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+
+}
+
+.scuk-like-content {
+	width: 110px;
+	float: right;
+
+	// Smartphony az tablet na vysku - centrovani atd.
+	@media (max-width: 767px) {
+		width: auto;
+		float: none;
+	}
+
+}
+
+.scuk-like-icon {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+  font-size: 40px;
+  line-height: 40px;
+  width: 30px;
+  height: 30px;
+  padding: 5px 10px 15px;
+  .border-radius(10px);
+  background: @grayLight;
+  color: @textColor;
+
+	&.active:hover,
+	&.active:focus,
+	&.active:active {
+	  .opacity(75);
+	}
+}
+
+.scuk-like-count {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  padding: 15px 10px 5px;
+  margin-left: 2px;
+	font-weight: bold;
+  .border-radius(10px);
+  background: @grayLight;
+  color: @textColor;
+}
+
+
+/* --- Boxik s podnikem ---
+   (Polozka seznamu podniku.)
+*/
+
+.scuk-shop-box {
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	background: @grayLighter;
+	margin-bottom: .5*@baseLineHeight;
+
+	.scuk-score-icon {
+		margin-top: 5px;
+	}
+
+}
+
+.scuk-shop-box .scuk-map-box {
+	float: left;
+	width: 45px;
+	height: 40px;
+	margin: 0;
+	text-align: center;
+
+	.scuk-map-icon {
+		position: relative;
+		top: -2px;
+	}
+
+}
+
+.scuk-shop-box h3 {
+	.fontSizeMediumForBoxes();
+	margin-bottom: 0;
+	margin-left: 48px;  	// Sirka se dopocitava automaticky
+	margin-right: 130px;
+
+	a {
+		display: block;
+		.text-overflow();
+	}
+
+	// Smartphony na vysku
+	@media (max-width: 479px) {
+		font-size: 	16px;
+	}
+
+}
+
+.scuk-shop-box-right {
+	float: right;
+	width: 130px;
+}
+
+.scuk-shop-box-visits {
+	float: left;
+	width: 80px;
+	.fontSizeSmall();
+	text-align: right;
+
+	a {
+		display: block;
+	}
+}
+
+.scuk-shop-box-price {
+	float: left;
+	width: 50px;
+	text-align: center;
+
+	a {
+		display: block;
+	}
+}
+
+.scuk-shop-box .scuk-score {
+	float: left;
+	width: 50px;
+	padding: 0;
+	text-align: center;
+}
+
+
+/* --- Velky boxik s podnikem ---
+   (napr. ve specialech)
+*/
+
+.scuk-shop-box-great {
+	display: block;
+	position: relative;
+	background: @grayLighter;
+	margin-bottom: 10px;
+	overflow: hidden;
+
+	// Mixin co generuje rozmery mikrolayoutu v polozce s jednim podnikem
+	.scukShopBoxSizes(@imageHeight: 187px, @boxHeight: 480px, @bottomPadding: 215px) {
+		height: @boxHeight;
+		h3 a
+		  { padding-top: @imageHeight+50; padding-bottom: @bottomPadding; }
+		.scuk-box-photo
+			{ margin-top: 10-1*@boxHeight; }
+		.scuk-like
+			{ top: -50+@imageHeight; }
+		.address
+			{ top: @imageHeight+83; }
+		.icons
+			{ top: @imageHeight+118; }
+		.perex
+			{ top: @imageHeight+178; }
+	}
+
+	h3 {
+		margin-bottom: 0;
+	}
+
+	h3 a {
+		font-size: 28px;
+		line-height: 110%;
+		height: 28px;
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 215px;
+		margin-bottom: 0;
+		.text-overflow();
+	}
+
+	.scuk-box-photo {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.scuk-like {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+
+	.address {
+		position: absolute;
+		top: 270px;
+		left: 20px;
+		margin-right: 20px;
+	}
+
+	.icons {
+		position: absolute;
+		top: 305px;
+		left: 20px;
+		margin-right: 20px;
+	}
+
+	.perex {
+		position: absolute;
+		top: 365px;
+		left: 20px;
+		margin-right: 20px;
+	}
+
+	.scuk-map-icon,
+	.scuk-score-icon,
+	.scuk-price-icon {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		margin-right: 10px;
+	}
+
+	// Vygenerovani rozmeru pro bezny desktop
+	// Vyska obrazku: 187
+	// Vyska boxu: 480
+	// Vyska spodniho paddingu pod odkazem: 215px
+	.scukShopBoxSizes(187px, 480px, 215px);
+
+	// Velky desktop
+	// Obrazek 350x234
+	// Vyska boxu: 500
+	// Vyska spodniho paddingu pod odkazem: 189px
+	@media (min-width: 1200px) {
+		.scukShopBoxSizes(234px, 500px, 189px);
+	}
+
+	// Tablet na vysku
+	// Obrazek 208x139
+	// Vyska boxu: 500
+	// Vyska spodniho paddingu pod odkazem: 283px
+	@media (min-width: 768px) and (max-width: 979px) {
+		.scukShopBoxSizes(139px, 450px, 233px);
+	}
+
+	// Mobily
+	// (Ponechame vychozi rozmery a jen omezime vysku obrazku)
+	@media (max-width: 767px) {
+		.scuk-box-photo img {
+			height: 187px;
+			max-height: 187px;
+			width: auto;
+		}
+	}
+
+
+}
+
+
+
+/* --- Boxik se specialem --- */
+
+.scuk-special-box {
+	padding: 10px;
+	overflow: hidden;
+	background: @grayLighter;
+	margin-bottom: @baseLineHeight;
+
+	.image a {
+		display: block;
+	}
+
+	.image img {
+		max-width: 100%;
+		height: auto
+	}
+
+	.scuk-like {
+		float: right;
+		position: relative;
+		top: -77px;
+		right: 10px;
+	}
+
+	h3 {
+		margin-top: -1px;
+	}
+
+	h3 a {
+		font-size: 28px;
+		line-height: 110%;
+		height: 32px;
+		display: block;
+		.text-overflow();
+		width: 100%; // TODO proc musim?
+	}
+
+}
+
+
+/* --- Obrazek v polozce seznamu ---
+   (napr. v seznamu podniku v detailu specialu)
+*/
+
+.scuk-box-photo {
+
+	.image {
+		display: block;
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		.better-image-rendering();
+	}
+
+	.scuk-box-photo-others a {
+		display: inline-block;
+		padding: 0 10px;
+		line-height: 30px;
+		background: @textColor;
+		color: #fff;
+	}
+
+}
+
+
+/* --- Ikonka s odkazem na mapu ---
+   (napr. v polozce seznamu podniku nebo v seznamu podniku u specialu)
+  format markupu: <a class="scuk-map-icon">Mapa</a>
+*/
+
+.scuk-map-icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	font-size: 8px;
+	line-height: 30px;
+	text-align: center;
+	.border-radius(50%);
+	background: @white;
+	text-transform: uppercase;
+	background: url('../img/spendlik.png') no-repeat scroll top left;
+	.background-size(contain);
+	text-indent: -200px;
+	overflow: hidden;
+
+	&:hover,
+	&:focus,
+	&:active {
+	  .opacity(75);
+	}
+
+}
+
+
+/* --- Ikonka s dojmem z navstevy ---
+   (napr. v seznamu navstev)
+   format markupu: <a class="scuk-visit-rate">☺</a>
+*/
+
+.scuk-visit-rate {
+	display: inline-block;
+	font-size: 20px;
+	line-height: 20px;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	text-indent: -500px;
+	.background-size(contain);
+
+	&.visit-ok {
+			background: url('../img/visit_ok.png') no-repeat center center;
+	}
+
+	&.visit-ko {
+			background: url('../img/visit_ko.png') no-repeat center center;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+	  .opacity(75);
+	}
+
+}
+
+
+/* --- Ikonka s cenovou urovni ---
+  napr. v polozce seznamu podniku nebo v seznamu podniku u specialu
+  format markupu: <span class="scuk-price-icon price-cheap">Levný</span>
+*/
+
+.scuk-price-icon {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	.border-radius(50%);
+	.background-size(contain);
+	background: @white;
+	color: @gray;
+	overflow: hidden;
+	text-indent: -500px;
+
+	&.price-cheap {
+		background-image: url('../img/cen_uroven1.png');
+	}
+
+	&.price-normal {
+		background-image: url('../img/cen_uroven2.png');
+	}
+
+	&.price-lux {
+		background-image: url('../img/cen_uroven3.png');
+	}
+
+}
+
+
+
+/* --- Kulate ikonky s popiskem  ---
+	 Napr. vedle nazvu podniku v detailu.
+*/
+
+.scuk-peep-icon {
+	float: left;
+  display: inline-block;
+  width: 60px;
+  margin-right: 25px;
+  text-align: center;
+  .fontSizeSmall();
+
+
+	.scuk-peep-icon-body {
+	  display: inline-block;
+	}
+
+	.scuk-peep-icon-pic {
+	  width: 50px;
+	  height: 50px;
+	  display: inline-block;
+		border: 2px solid @grayLight;
+	  .border-radius(50%);
+	}
+
+	.scuk-peep-icon-text {
+		display: inline-block;
+		padding: 0 5px;
+		color: @textColor;
+		line-height: 120%;
+		.fontSizeSmall();
+	}
+
+	// Ikona ceny
+
+	&.peep-price .scuk-peep-icon-text {
+	  padding-top: 5px; // TODO nerozumim proc musim
+	}
+
+	.scuk-price-icon {
+		width: 50px;
+		height: 50px;
+		margin-bottom: 20px;
+	}
+
+
+}
+
+
+
+/* --- Boxik s profilem scukare ---
+	 (napr. stranka Lide nebo seznam lidi oblibenych scukarem)
+*/
+
+.scuk-profile-box {
+	margin-bottom: 20px;
+	text-align: center;
+
+	h3 {
+	  margin: 0;
+	  .fontSizeMediumForBoxes();
+	  line-height: 25px;
+		.text-overflow();
+	}
+
+	.scuk-avatar {
+		width: 80%;
+		max-width: 120px;
+		margin: 0 auto 5px;
+
+		// Tablety na vysku
+		@media (max-width: 768px) {
+			max-width: 100px;
+		}
+
+	}
+
+	.scuk-avatar img {
+		//margin: 0 10%;
+	}
+
+	.visits {
+		margin: 0;
+	}
+
+	.status {
+		margin: 0;
+	}
+
+}
+
+
+/* --- Boxik s pismenem ---
+  (napr. uvodni stranka Stitku)
+*/
+
+.scuk-letter {
+	display: inline-block;
+	font-size: 22px;
+	line-height: 27px;
+	width: 35px;
+	text-align: center;
+	margin-top: -6px;
+	margin-right: 5px;
+	background-color: @textColor;
+	color: @white;
+
+	&.scuk-letter-big {
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		font-size: 35px;
+		margin-right: 10px;
+	}
+
+	a {
+		display: block;
+		padding: 1px 0;
+	}
+
+}
+
+
+
+/* --- Boxiky s pismeny ---
+   (napr. uvodni stranka Stitku)
+*/
+
+.scuk-tag-box {
+	padding: 10px 15px;
+	height: 20px;
+	background: @grayLighter;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.scuk-tag-box-name {
+	display: inline-block;
+	@fontSizeNormal;
+	margin-right: 5px;
+	position: relative;
+	top: -2px;
+	width: 60%;
+	.text-overflow();
+}
+
+.scuk-tag-box-more {
+	float: right;
+	margin-top: 2px;
+}
+
+/* --- Boxik s velkym odkazem ---
+   Napr. odkazy na socialni site pod fotkou v detailu Scukare
+*/
+
+.scuk-link-box {
+	margin-bottom: 5px;
+
+	a {
+		background: @grayLighter;
+		display: block;
+		.fontSizeMedium();
+		line-height: 40px;
+		.text-overflow();
+		padding: 0 10px;
+
+		// Smartphony, male tablety - musime prepsat deklaraci pro .fontSizeMedium()
+		@media (max-width: 767px) {
+			line-height: 40px;
+		}
+
+	}
+
+}
+
+
+/* --- Strankovani --- */
+
+.js .scuk-pagination {
+	display: none;
+}
+
+.no-js .scuk-pagination {
+	display: block;
+}
+
+
+/* --- AJAXove strankovani --- */
+
+.scuk-ajax-pagination li:first-child a {
+	.border-radius(3px);
+}
+
+
+.js .scuk-ajax-pagination {
+	display: block;
+}
+
+.no-js .scuk-ajax-pagination {
+	display: none;
+}
+
+
+/* --- Indikator nacitani --- */
+
+.scuk-loading {
+	background: url('../img/loading_black.png') center center;
+  -webkit-animation: rotate .5s infinite linear; /* Saf5, Chrome */
+  -moz-animation: rotate .5s infinite linear; /* FF5+ */
+  -ms-animation: rotate .5s infinite linear; /* IE10pp3 */
+}
+
+.scuk-loading-block {
+	margin-top: 1.33em;
+	margin-bottom: 2.66em;
+	display: none;
+
+	.s-loading & {
+		display: block;
+	}
+}
+
+.scuk-loading-block .scuk-loading {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.loading-white {
+	background-image: url('../img/loading_white.png');
+}
+
+/* --- Animace: Rotace - uziva se v loading stavech --- */
+
+@-webkit-keyframes rotate {
+  	to {-webkit-transform:rotate(-360deg);}
+}
+
+@-moz-keyframes rotate {
+  	to {-moz-transform:rotate(-360deg);}
+}
+
+@-ms-keyframes rotate {
+  	to {-ms-transform:rotate(-360deg);}
+}
+
+
+/* ---  Prazdny boxik ---
+   napr. .scuk-review-box nebo .scuk-visit-box v detailu Scukare nebo detailu podniku
+   Pro shodnou vysku je dulezite aby boxik, na ktery to aplikujeme, mel take .box-sizing(border-box).
+*/
+
+.scuk-empty-box {
+	background: transparent;
+	border: @grayLight dashed 2px;
+
+	// Tam kde Bootstrap uz nema layout prazdne boxiky nezobrazujeme
+	@media (max-width: 767px) {
+		display: none;
+	}
+
+}
+
+
+
+/* --- Lista s tlacitky ---
+   napr. pod nadpisem ve specialech
+*/
+.scuk-btn-ribbon {
+	margin-top: -1em;
+	margin-bottom: 1.33em;
+}
+
+/* --- Bannery --- */
+
+/* --- Horni banner ---
+   Vyska 90, uvnitr obrazek 320x90, strany se roztahuji
+*/
+
+.banner-top {
+
+	.banner {
+		position: relative;
+		margin: 0 auto;
+		height: 90px;
+		display: block;
+		background: #777;
+		text-align: center;
+
+		@media (max-width: 480px) {
+			background: transparent;
+		}
+
+		img { // Half banner 320x90
+			position: absolute;
+			margin: -45px 0 0 -160px;
+			top: 50%;
+			left: 50%;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+		  .opacity(90);
+		}
+
+
+	 }
+
+}
+
+
+/* --- Spodni bannery ---
+  Max. 3x Halfbanner 234x60
+*/
+
+.banner-bottom {
+	text-align: center;
+	margin: 0 auto;
+	background: #ddd;
+	padding: 2em 0;
+	.clearfix();
+
+	.banner-bottom-items {
+		display: inline-block;
+		height: 60px;
+		overflow: hidden;
+	}
+
+	.banner-bottom-item {
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 0;
+	}
+
+	.banner-bottom-items > .banner-bottom-item:last-child {
+		margin-right: 0;
+	}
+
+	.row {
+		margin-bottom: 0;
+	}
+
+	// Do 979px jsou mezi bannery mensi mezery aby se vesly na 768
+	@media (max-width: 979px) {
+		.banner-bottom-item {
+			margin-right: 10px;
+		}
+	}
+
+	// Od 767px nize nezobrazujeme treti banner a plochu roztahneme
+	@media (max-width: 767px) {
+		margin-left: -20px;
+		margin-right: -20px;
+
+		.banner-bottom-items > .banner-bottom-item:last-child {
+			display: none;
+		}
+
+	}
+
+	// Od 540px nize nezobrazujeme ani druhy banner
+	@media (max-width: 540px) {
+		.banner-bottom-items > .banner-bottom-item:nth-child(2) {
+			display: none;
+		}
+	}
+
+}
+
+
+/* --- Partnersky banner ---
+  (napr. v detailu specialu)
+*/
+
+.scuk-partner-banner {
+	background-color: @grayLighter;
+  padding: 20px;
+  border: 1px solid @grayLight;
+  border-top: 0;
+	.border-radius(0 0 20px 20px);
+
+	.wrapper {
+		display: table-row;			// Vertikalni centrovani obsahu .text
+	}
+
+	.image {
+		width: 150px;
+		float: left;
+	}
+
+	.text {
+		margin: 0 0 0 180px;
+		max-width: 800px;
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	.text p {
+		display: table-cell;	// Vertikalni centrovani obsahu .text
+		vertical-align: middle;
+		height: 120px;
+		margin: 0;
+	}
+
+	// Normalni desktop a tablety na sirku
+	@media (min-width: 1200px) {
+		.text {
+			font-size: 30px;
+			line-height: 38px;
+		}
+	}
+
+	// Smartphony az tablety na vysky
+	@media (min-width: 481px) and (max-width: 767px) {
+		.text {
+			font-size: 20px;
+			line-height: 25px;
+		}
+	}
+
+
+  // Smartphony
+	@media (max-width: 480px) {
+		.image {
+			 width: 75px;
+		}
+
+		.image img {
+			width: 75px;
+			height: auto;
+		}
+
+		.text {
+			margin-left: 90px;
+			height: 60px;
+			font-size: @baseFontSize;
+			line-height: @baseLineHeight;
+		}
+
+		.text p {
+			height: 60px;
+		}
+	}
+
+}
+

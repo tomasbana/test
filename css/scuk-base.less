@@ -1,0 +1,52 @@
+/* Nase zakladni typoska
+   -----------------------------------------------------------------
+*/
+
+
+html {
+	font-size: 15px;
+	line-height: 133%;
+}
+
+body {
+	font-size: inherit;
+	line-height: inherit;
+	
+	// Odsazeni obsahu zezhora - jen pro desktop
+	@media (min-width: 980px) { 
+		padding-top: 80px; 
+	}
+	
+}
+
+p, ul, ol, blockquote {
+	font-size: inherit;
+	line-height: inherit;
+	margin-bottom: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 125%;
+	margin-bottom: 10px;
+	
+	// Smartphony	- odsazeni zezdola atd.
+	@media (max-width: 480px) {
+		margin-bottom: @baseFontSize;		
+	}	
+	
+}
+
+select {
+	width: auto;
+}
+
+li {
+	line-height: inherit;
+}
+
+// Globalni mouseover nad aktivnim obrazky
+a:hover img,
+a:focus img,
+a:active img {
+  .opacity(90);
+}
